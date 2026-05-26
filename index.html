@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hebreo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="logo">Alef-Bet ✡︎</div>
+      <div class="nav">
+        <button class="tab" data-target="inicio">Inicio</button>
+        <button class="tab" data-target="letras">Letras</button>
+        <button class="tab" data-target="ejercicios">Ejercicios</button>
+        <button class="tab" data-target="tefila">Tefilá</button>
+        <button class="tab" data-target="salmos">Salmos</button>
+      </div>
+    </header>
+    <div class="marquee-wrap">
+      <marquee id="marqueeText" behavior="scroll" scrollamount="4">Cargando calendario...</marquee>
+    </div>
+
+    <main class="shell">
+      <section id="inicio" class="section">
+        <div class="panel">
+          <h1>Bienvenido</h1>
+          <p class="blink">Haz clic para empezar</p>
+          <p>Aprende a leer hebreo con esta web. Elige una sección:</p>
+          <div class="menu-center">
+            <button class="menu-btn" data-target="letras">Letras</button>
+            <button class="menu-btn" data-target="ejercicios">Ejercicios</button>
+            <button class="menu-btn" data-target="tefila">Tefilá</button>
+            <button class="menu-btn" data-target="salmos">Salmos</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="letras" class="section" hidden>
+        <div class="panel">
+          <h2>Alfabeto Hebreo</h2>
+          <p>Haz clic en una letra para ver su pronunciación.</p>
+
+          <div class="letters-grid" id="lettersGrid"></div>
+
+          <div class="info-card" id="letterInfo">
+            <div class="big-letter" id="bigLetter">א</div>
+            <div>
+              <div class="letter-name" id="letterName">Álef</div>
+              <div class="letter-sound" id="letterSound">Silencio suave / a</div>
+              <div class="letter-actions">
+                <button class="play-btn" id="letterAudioPlay" disabled>Pronunciar letra</button>
+              </div>
+            </div>
+          </div>
+
+          <h3>Vocales (Niqqud)</h3>
+          <div class="vowels" id="vowels"></div>
+          <div class="vowel-info" id="vowelInfo">Selecciona una vocal para ver su sonido.</div>
+
+          <div id="letterAudioMap" hidden>
+            <!--
+              <audio data-letter="א" src="audios/alef.mp3"></audio>
+            -->
+          </div>
+        </div>
+      </section>
+
+      <section id="ejercicios" class="section" hidden>
+        <div class="panel">
+          <h2>Ejercicios</h2>
+          <p>Selecciona un nivel de dificultad.</p>
+          <div class="difficulty" data-group="ejercicios">
+            <button class="difficulty-btn" data-group="ejercicios" data-level="facil">Fácil</button>
+            <button class="difficulty-btn" data-group="ejercicios" data-level="medio">Medio</button>
+            <button class="difficulty-btn" data-group="ejercicios" data-level="dificil">Difícil</button>
+          </div>
+          <div class="exercise-list" id="exerciseList"></div>
+          <p class="audio-hint">En <span class="code">app.js</span> puedes añadir mp3 para pronunciación y lento x0.5.</p>
+        </div>
+      </section>
+
+      <section id="tefila" class="section" hidden>
+        <div class="panel">
+          <h2>Tefilá</h2>
+          <p>aaaaaaaaaaaa.</p>
+        </div>
+      </section>
+
+      <section id="salmos" class="section" hidden>
+        <div class="panel">
+          <h2>Salmos (150)</h2>
+          <p>Haz clic en un salmo para ampliar. Haz clic fuera para cerrar.</p>
+          <div class="psalms-wrap">
+            <div class="psalms-overlay" id="psalmsOverlay" hidden></div>
+            <div class="psalms-grid" id="psalmsGrid"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Comunidad Judía Andorrana</span>
+      <div class="badges">
+        <img src="content/andorra.png" alt="Andorra" id="andorra">
+        <img src="content/israel.png" alt="Israel">
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

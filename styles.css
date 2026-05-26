@@ -1,0 +1,401 @@
+﻿:root {
+  --bg-a: #9cacd0;
+  --blue-1: #4e6db7;
+  --blue-2: #9cacd0;
+  --blue-3: #748dc9;
+  --bg-b: #49d6f5;
+  --page: #4e6db7;
+  --ink: #000;
+  --hot: #4e6db7;
+  --lime: #748dc9;
+  --cyan: #00ffff;
+  --border-dark: #000;
+  --border-light: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Times New Roman", "Verdana", "Comic Sans MS", serif;
+  background-color: var(--bg-a);
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.25) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.25) 75%, rgba(255,255,255,0.25)),
+    linear-gradient(45deg, rgba(0,0,0,0.06) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.06) 75%, rgba(0,0,0,0.06));
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.page {
+  max-width: 980px;
+  margin: 16px auto 32px;
+  background: var(--page);
+  border: 6px ridge var(--border-light);
+  box-shadow: 8px 8px 0 #1a1a1a;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: linear-gradient(90deg, #ffffff, var(--blue-1));
+  border-bottom: 4px ridge var(--border-light);
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--hot);
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #000;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tab,
+.menu-btn,
+.letter-btn,
+.vowel-btn,
+.sub-tab,
+.difficulty-btn,
+.play-btn,
+.psalm-play {
+  font-family: inherit;
+  border: 2px outset var(--border-light);
+  background: var(--blue-1);
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tab:active,
+.menu-btn:active,
+.letter-btn:active,
+.vowel-btn:active,
+.sub-tab:active,
+.difficulty-btn:active,
+.play-btn:active,
+.psalm-play:active {
+  border-style: inset;
+}
+
+.tab.active,
+.sub-tab.active,
+.difficulty-btn.active {
+  background: var(--lime);
+}
+
+.play-btn,
+.psalm-play {
+  background: var(--blue-1);
+}
+
+.play-btn:disabled,
+.psalm-play:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.marquee-wrap {
+  background: #000;
+  color: #00ff00;
+  border-top: 3px double #fff;
+  border-bottom: 3px double #fff;
+  font-weight: bold;
+}
+
+.shell {
+  padding: 18px;
+}
+
+.panel {
+  background: #fff;
+  border: 3px double #000;
+  padding: 18px;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.blink {
+  color: #ff0000;
+  font-weight: bold;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.menu-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.menu-btn {
+  min-width: 160px;
+  font-size: 18px;
+  background: var(--blue-1);
+}
+
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.letter-btn {
+  font-size: 22px;
+  padding: 10px 0;
+  background: var(--blue-1);
+}
+
+.letter-btn.active {
+  background: var(--blue-3);
+  color: #fff;
+}
+
+.info-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  background: #f4f4ff;
+  border: 2px dotted #000;
+  margin-bottom: 16px;
+}
+
+.big-letter {
+  font-size: 64px;
+  text-align: center;
+  color: #7a00ff;
+}
+
+.letter-name {
+  font-size: 22px;
+}
+
+.letter-sound {
+  color: #333;
+}
+
+.letter-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vowels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.vowel-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--blue-1);
+}
+
+.vowel-symbol {
+  font-size: 20px;
+}
+
+.vowel-info {
+  padding: 10px;
+  background: #ffffe0;
+  border: 2px groove #000;
+}
+
+.audio-hint {
+  margin-top: 8px;
+  font-size: 12px;
+  background: #ffffe0;
+  border: 2px groove #000;
+  padding: 6px 8px;
+}
+
+.code {
+  font-family: "Courier New", monospace;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 0 4px;
+}
+
+.sub-menu {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 10px;
+}
+
+.sub-panels {
+  margin-top: 10px;
+}
+
+.difficulty {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+}
+
+.difficulty-btn {
+  background: #4e6db7;
+}
+
+.exercise-list {
+  display: grid;
+  gap: 12px;
+}
+
+.exercise-item {
+  border: 2px dotted #000;
+  background: #f4f4ff;
+  padding: 10px;
+}
+
+.exercise-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.exercise-text {
+  font-size: 18px;
+  direction: rtl;
+  unicode-bidi: plaintext;
+  margin-bottom: 8px;
+}
+
+.exercise-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.psalms-wrap {
+  margin-top: 12px;
+}
+
+.psalms-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 20;
+}
+
+.psalms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.psalm-card {
+  border: 2px dotted #000;
+  background: #fff;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.psalm-card.expanded {
+  position: fixed;
+  top: 12vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(920px, 92vw);
+  max-height: 80vh;
+  overflow: auto;
+  background: #fff;
+  z-index: 21;
+  box-shadow: 10px 10px 0 #1a1a1a;
+}
+
+.psalm-card.expanded .psalm-image {
+  min-height: 280px;
+}
+
+.psalm-number {
+  font-weight: bold;
+}
+
+.psalm-image {
+  min-height: 120px;
+  border: 2px groove #000;
+  background: #f9f9f9;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 6px;
+}
+
+.psalm-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer {
+  text-align: center;
+  padding: 12px 10px 18px;
+  border-top: 4px ridge #fff;
+  background: var(--blue-3);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+
+}
+
+.badges img {
+  max-width: 30px;
+  max-height: 18px;
+  height: auto;
+  border: #000 2px solid;
+}
+
+#andorra {
+  max-width: 30px;
+  max-height: 18px;
+}
+
+@media (max-width: 720px) {
+  .info-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .psalm-card.expanded {
+    top: 8vh;
+    width: 94vw;
+    max-height: 84vh;
+  }
+}
+
