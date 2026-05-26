@@ -3,6 +3,7 @@
   if (typeof module === 'object' && module.exports) {
     module.exports = api;
   }
+  
   root.LunaRambamCore = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
